@@ -1,12 +1,12 @@
 from datetime import datetime
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request, redirect, url_for, send_from_directory, request
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
    print('Request for index page received')
-   return render_template('index.html')
+   print(request.headers)
 
 @app.route('/favicon.ico')
 def favicon():
